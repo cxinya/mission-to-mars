@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<div class="jumbotron">
+  <div class = "container">
+    <h1>Mission to Mars</b>
+    <p></p>
+    <p>Are you really into Mars?</p><p>Do you find yourself getting the mid-afternoon shakes because you crave Martian info so hard?</p>
+    <p><b>Well do we have good news for you!</b> Click refresh now to get your daily fix of fresh facts about Mars!</p>
+    <p><a class="btn btn-primary btn-lg" href="http://127.0.0.1:5000/scrape" role="button">
+        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp&nbspRefresh</a></p>
+  </div>
+</div>
+
+<div class = "container">
+    <div class = "col-lg-12 col-md-16 col-sm-16 text-center">
+        <h2><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp&nbspFeatured Picture of Our Mutual Favorite Planet, Mars</h2><br>
+    <img src = {{ mars.feat_img }} class = "img-fluid" align = "middle">
+    </div>
+</div>
+<div class = "container">
+    <row>
+        <div class = "col-lg-6 col-md-6 col-sm-12">
+            <h2><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp&nbspHot Takes on Mars</h2>
+            <hr>
+            <p><b>{{ mars.news_title }}</b></p>
+            <p>{{ mars.news_para }}</p>
+        </div>
+        <div class = "col-lg-6 col-md-6 col-sm-12">
+            <h2><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp&nbspCurrent Weather</h2>
+            <hr>
+            <p>{{ mars.weather }}</p>
+            <p>tl;dr: inhospitable</p>
+        </div>
+    </row>
+</div>
+<div class = "container">
+    <div class = "col-lg-12 col-md-12 col-sm-12">
+        <h2 class = "text-center"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp&nbspMFing Mars Facts</h2>
+        <hr>
+    </div>
+    <row>
+
+        <div class = "col-sm-6 col-md-6 col-lg-6">
+            <p>We've already established that you're exceptionally into Mars so you probably already know all of these facts. But, in case you don't, get ready to have your <b>mind blown</b>.</p><br>
+            <table class="table-hover">{{ mars.facts | safe }}</table>
+        </div>
+        <div class = "col-sm-6 col-md-6 col-lg-6" align = "middle"><iframe src="https://giphy.com/embed/3o7TKSjRrfIPjeiVyM" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/newyorkcomiccon-mind-blown-nycc-3o7TKSjRrfIPjeiVyM">via GIPHY</a></p></div>
+    </row>
+    </div>
+</div>
+
+<div class = "container">
+    <div class = "col-lg-12">
+        <h2 class = "text-center"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>&nbsp&nbspMartian Hemispheres</h2>
+    <hr>
+    <p>Dang Mars, u servin some lewks.</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-6">
+        <div class="thumbnail">
+          <img src = {{ mars.hemis[0].img_url }} alt = {{ mars.hemis[0].title }}>
+          <div class="caption">
+            <h3>{{ mars.hemis[0].title }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-6">
+        <div class="thumbnail">
+          <img src = {{ mars.hemis[1].img_url }} alt = {{ mars.hemis[1].title }}>
+          <div class="caption">
+            <h3>{{ mars.hemis[1].title }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-6">
+        <div class="thumbnail">
+          <img src = {{ mars.hemis[2].img_url }} alt = {{ mars.hemis[2].title }}>
+          <div class="caption">
+            <h3>{{ mars.hemis[2].title }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-6">
+        <div class="thumbnail">
+          <img src = {{ mars.hemis[3].img_url }} alt = {{ mars.hemis[3].title }}>
+          <div class="caption">
+            <h3>{{ mars.hemis[3].title }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>
